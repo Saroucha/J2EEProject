@@ -31,13 +31,13 @@ public class EditUser {
         	preparedStatement.setString(4,password);
         	preparedStatement.setString(5,role);
         	preparedStatement.setInt(6,hidden_id);
-        	preparedStatement.executeUpdate(); //execute query
+        	preparedStatement.executeUpdate(); 
             
-        	preparedStatement.close(); //close statement
+        	preparedStatement.close(); 
             
         	 int i= preparedStatement.executeUpdate();
         	 
-        	 if (i!=0)  //Just to ensure data has been inserted into the database
+        	 if (i!=0)  
         	 return "SUCCESS UPDATE"; 
         	 }
         	 catch(SQLException e)
@@ -45,6 +45,6 @@ public class EditUser {
         	 e.printStackTrace();
         	 }
         	 
-        	 return "Oops.. Something went wrong there..!";  // On failure, send a message from here.
+        	 return "Oops.. Something went wrong there..!";  
         	 }
 }

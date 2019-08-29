@@ -3,19 +3,42 @@
 <html>
 <head>
 <title>RG Page</title>
+ <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </head>
-<% //In case, if Admin session is not set, redirect to Login page
+<% 
 if((request.getSession(false).getAttribute("RG")== null) )
 {
 %>
 <jsp:forward page="/WEB-INF/Login.jsp"></jsp:forward>
 <%} %>
 <body>
-<center><h2>Espace RG</h2></center>
-<div style="text-align: right"><a href="<%=request.getContextPath()%>/ConsulFormation">Consultation de formation</a></div>
-<div style="text-align: right"><a href="<%=request.getContextPath()%>/RegisterFormation">Enregistrement de formation</a></div>
-<div style="text-align: right"><a href="<%=request.getContextPath()%>ConsulSalle">Consultation de salle</a></div>
-<div style="text-align: right"><a href="<%=request.getContextPath()%>/SalleAjout">Enregistrement de salle</a></div> 
-<div style="text-align: right"><a href="<%=request.getContextPath()%>/Logout">Logout</a></div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Espace Administration "RG" </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Accueil</a></li>
+    
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Formations <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="RegisterFormation">Ajouter une formation</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Salles<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="ConsulSalle">Consulter les salle</a></li>
+        </ul>
+      </li>
+       <li><a href="Logout">Déconnexion !</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container" align="center">
+<h2>Bienvenue à votre espace "RG" !!</h2>
+</div>
 </body>
 </html>

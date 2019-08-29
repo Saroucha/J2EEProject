@@ -1,14 +1,9 @@
 package com.forms;
 
 import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,15 +12,13 @@ import com.beans.Classe;
 import com.beans.Formation;
 import com.beans.Prof;
 import com.beans.Salle;
-import com.beans.Utilisateur;
 import com.mvc.util.DbConnection;
 
-
-public class RegisterFormation {
-
-	public String registerFormation(Formation registerBean)
+public class ConsultationSalleFormateur {
+	
+	public String consultationSalleFormateur(Formation registerBean)
 	{
-		String libelle= registerBean.getLibelle();
+		
 		String dateDebut = registerBean.getDateDebut();
 		String dateFin = registerBean.getDateFin();
 		int idClasse=registerBean.getIdClasse();
@@ -35,23 +28,18 @@ public class RegisterFormation {
 		String salle=registerBean.getSalle(); //salle
 		String classe=registerBean.getNomClasse(); //classe
 
-
 		Connection con = null;
 		PreparedStatement preparedStatement = null;
 
 		try
 		{
 			con = DbConnection.createConnection();
-			String query = 	"insert into formation (id, Libelle,DateDebut,DateFin,idProf,No,idClasse) VALUES (NULL,?,?,?,?,?,?)";
+			String query = 	"select id,S.DateDebut,S.DateFin,T.NOMP,L.NOM, C.NOMClasse from formation S, prof T, salles L, classe C WHERE T.NOMP=?";
 		
 			preparedStatement = con.prepareStatement(query);
 			
-			preparedStatement.setString(1, libelle);
-			preparedStatement.setString(2, dateDebut);
-			preparedStatement.setString(3, dateFin);
-			preparedStatement.setString(4, nomP);
-			preparedStatement.setString(5, salle);
-			preparedStatement.setString(6, classe);
+			preparedStatement.setString(1, nomP);
+			
 			int i= preparedStatement.executeUpdate();
 			if (i!=0)  
 				return "SUCCESS"; 
@@ -140,6 +128,4 @@ public class RegisterFormation {
 
 		return listClasse;
 	}
-
-
 }

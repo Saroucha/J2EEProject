@@ -73,8 +73,7 @@
     <servlet-name>ConsulFormation</servlet-name>
     <url-pattern>/ConsulFormation</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>EditUser</servlet-name>
     <servlet-class>com.servlets.EditUser</servlet-class>
   </servlet>
@@ -82,4 +81,8 @@
     <servlet-name>EditUser</servlet-name>
     <url-pattern>/EditUser</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  
 </web-app>

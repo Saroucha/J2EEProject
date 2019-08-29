@@ -12,7 +12,7 @@ public class LoginUser {
 	public String authenticateUser(Utilisateur loginBean)
 	 {
 	 
-	String userName = loginBean.getEmail(); //Keeping user entered values in temporary variables.
+	String userName = loginBean.getEmail(); 
 	 String password = loginBean.getMotDePasse();
 	 
 	Connection con = null;
@@ -25,13 +25,13 @@ public class LoginUser {
 	 
 	try
 	 {
-	 con = DbConnection.createConnection(); //establishing connection
-	 statement = con.createStatement(); //Statement is used to write queries. Read more about it.
-	 resultSet = statement.executeQuery("select email,password,Role from utilisateur"); //Here table name is users and userName,password are columns. fetching all the records and storing in a resultSet.
+	 con = DbConnection.createConnection(); 
+	 statement = con.createStatement(); 
+	 resultSet = statement.executeQuery("select email,password,Role from utilisateur"); 
 	
-	while(resultSet.next()) // Until next row is present otherwise it return false
+	while(resultSet.next()) 
 	 {
-	  userEmailDB = resultSet.getString("email"); //fetch the values present in database
+	  userEmailDB = resultSet.getString("email"); 
 	  passwordDB = resultSet.getString("password");
 	  roleDB = resultSet.getString("Role");
 	 
@@ -41,14 +41,13 @@ public class LoginUser {
 		  return "Formateur";
 		  else if(userName.equals(userEmailDB) && password.equals(passwordDB) && roleDB.equals("RG"))
 			  return "RG";
-		 
 		  }
 	  	 
 	 }catch(SQLException e)
 	 {
 	 e.printStackTrace();
 	 }
-	 return "Invalid user credentials"; // Just returning appropriate message otherwise
+	 return "Invalid user credentials";
 	 }
 
 }

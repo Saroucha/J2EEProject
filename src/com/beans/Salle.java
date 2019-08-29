@@ -6,6 +6,7 @@ public class Salle {
 	private String NOM;
 	private int place;
 	private String idT;
+	private String type;
 	
 	
 	public Salle(){
@@ -26,6 +27,7 @@ public class Salle {
 		this.idT=type;
 		this.place=places;
 	}
+	
 	
 	public String getNOM() {
 		return NOM;

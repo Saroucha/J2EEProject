@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class Logout extends HttpServlet {
-	 private static final long serialVersionUID = 1L;
-	 
-	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	 { 
-	 HttpSession session = request.getSession(false); 
-	 
-	if(session!=null) 
-	 {
-	 session.invalidate(); 
-	 request.setAttribute("errMessage", "Vous êtes bien déconnecté");
-	 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/Login.jsp");
-	 requestDispatcher.forward(request, response);
-	 System.out.println("Déconnexion");
-	 }
-	 }
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{ 
+		HttpSession session = request.getSession(false); 
+
+		if(session!=null) 
+		{
+			session.invalidate(); 
+			request.setAttribute("errMessage", "Vous êtes bien déconnecté");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/Login.jsp");
+			requestDispatcher.forward(request, response);
+			System.out.println("Déconnexion");
+		}
+	}
 
 }

@@ -18,14 +18,12 @@ public class RegisterSevlet extends HttpServlet {
 	public RegisterSevlet() {
 	 }
 	 public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-	        /* Affichage de la page d'inscription */
-	
+	       
 		      Map<String, String> roleList = new HashMap<String, String>();
 		      roleList.put("RF", "RF");
 		      roleList.put("RG", "RG");
 		      roleList.put("Etudiant", "Etudiant");
-		      roleList.put("Formateur", "Formateur");
-		      
+		      roleList.put("Formateur", "Formateur");      
 		      request.setAttribute( "role", roleList );
  
 	        this.getServletContext().getRequestDispatcher("/WEB-INF/RegisterUser.jsp" ).forward( request, response );

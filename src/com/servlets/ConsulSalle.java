@@ -36,9 +36,9 @@ public class ConsulSalle extends HttpServlet {
 			String password = ""; //MySQL password
 			connection = DriverManager.getConnection(url, username, password);
 			stmt = connection.createStatement();
-			rs = stmt.executeQuery("select No,S.NOM,S.NOMBRE_PLACE,T.Libelle from salle S, type T ");
+			rs = stmt.executeQuery("select No,NOM,NOMBRE_SALLE,TYPE from salles ");
 			while (rs.next()) {
-				dataList.add(new Salle(rs.getString("Nom"),rs.getInt("nombre_place"),rs.getString("Libelle")));
+				dataList.add(new Salle(rs.getString("NOM"),rs.getInt("NOMBRE_SALLE"),rs.getString("TYPE")));
 			}
 		} catch (ClassNotFoundException e) {
 

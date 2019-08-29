@@ -62,13 +62,11 @@ public class RegisterFormation extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 String libelle = request.getParameter("libelle");
-		 String dateD = request.getParameter("dateDebut");
-	 
-		 String dateF = request.getParameter("dateFin");
-	
-		 String prof = request.getParameter("idProf");
-		 String salle = request.getParameter("no");
-		 String classe = request.getParameter("idClasse");
+		 String dateD =request.getParameter("from");
+		 String dateF = request.getParameter("to");
+		 String prof = request.getParameter("prof");
+		 String salle = request.getParameter("salle");
+		 String classe = request.getParameter("classe");
 		 
 		 Formation registerBean = new Formation();
 		 Prof pro = new Prof();
@@ -77,9 +75,9 @@ public class RegisterFormation extends HttpServlet {
 		 
 		 registerBean.setLibelle(libelle);
 		 registerBean.setDateDebut(dateD);
-		 registerBean.setDateDebut(dateF);
+		 registerBean.setDateFin(dateF);
 		 registerBean.setNomP(prof);
-		 registerBean.setIdSalle(salle);
+		 registerBean.setSalle(salle);
 		 registerBean.setNomClasse(classe); 
 		 
 		 
@@ -90,7 +88,7 @@ public class RegisterFormation extends HttpServlet {
 		 
 		 if(userRegistered.equals("SUCCESS"))   
 		 {
-		 request.getRequestDispatcher("/WEB-INF/RGHome.jsp").forward(request, response);
+		 request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 		 }
 		 else  
 		 {

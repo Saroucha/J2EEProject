@@ -8,89 +8,60 @@ public class Formation {
 	private String DateDebut;
 	private String DateFin;
 	private String NomP;
-	private String PrenomP;
 	private int idProf;
-	private String idSalle;
+	private String Salle;
+	public int idSalle;
 	private String NomClasse;
-	private int idSall;
-	private int NomClass;
-	private int NomPr;
+	private int idClasse;
+	
+	
+	
 	public Formation(){
 
 	}
 
-	public Formation(String lib, String DateD, String DateF, String nom, String prenom, String salle, String classe){
+	public Formation(String lib, String DateD, String DateF, String nom, String salle, String classe){
 		this.Libelle=lib;
 		this.DateDebut=DateD;
 		this.DateFin=DateF;
 		this.NomP=nom;
-		this.PrenomP=prenom;
-		this.idSalle=salle;
+		this.Salle=salle;
 		this.NomClasse=classe;
 	}
 	
-	public int getIdSall() {
-		return idSall;
-	}
-
-	public void setIdSall(int idSall) {
-		this.idSall = idSall;
-	}
-
-	public int getNomClas() {
-		return NomClass;
-	}
-
-	public void setNomClass(int nomClass) {
-		NomClass = nomClass;
-	}
-
-	public int getNomPr() {
-		return NomPr;
-	}
-
-	public void setNomPr(int nomPr) {
-		NomPr = nomPr;
-	}
-
-	public Formation(String lib, String DateD, String DateF, int nomp, int sall,int clas){
+	public Formation(String lib, String DateD, String DateF, int idProf, int idSalle, int idClasse){
 		this.Libelle=lib;
 		this.DateDebut=DateD;
 		this.DateFin=DateF;
-		this.NomPr=nomp;
-		this.idSall=sall;
-		this.NomClass=clas;
-	}
-	public String getNomClasse() {
-		return NomClasse;
-	}
-
-	public void setNomClasse(String nomClasse) {
-		NomClasse = nomClasse;
+		this.idProf=idProf;
+		this.idSalle=idSalle;
+		this.idClasse=idClasse;
 	}
 
 	public String getLibelle() {
 		return Libelle;
 	}
+
 	public void setLibelle(String libelle) {
 		Libelle = libelle;
 	}
+
 	public String getDateDebut() {
 		return DateDebut;
 	}
+
 	public void setDateDebut(String dateDebut) {
 		DateDebut = dateDebut;
 	}
+
 	public String getDateFin() {
 		return DateFin;
 	}
+
 	public void setDateFin(String dateFin) {
 		DateFin = dateFin;
 	}
 
-	public String getIdSalle() {
-		return idSalle;
-	}
 	public String getNomP() {
 		return NomP;
 	}
@@ -99,17 +70,48 @@ public class Formation {
 		NomP = nomP;
 	}
 
-	public String getPrenomP() {
-		return PrenomP;
+	public int getIdProf() {
+		return idProf;
 	}
 
-	public void setPrenomP(String prenomP) {
-		PrenomP = prenomP;
+	public void setIdProf(int idProf) {
+		this.idProf = idProf;
 	}
 
-	public void setIdSalle(String idSalle) {
+	public String getSalle() {
+		return Salle;
+	}
+
+	public void setSalle(String salle) {
+		Salle = salle;
+	}
+
+	public int getIdSalle() {
+		return idSalle;
+	}
+
+	public void setIdSalle(int idSalle) {
 		this.idSalle = idSalle;
 	}
+
+	public String getNomClasse() {
+		return NomClasse;
+	}
+
+	public void setNomClasse(String nomClasse) {
+		NomClasse = nomClasse;
+	}
+
+	public int getIdClasse() {
+		return idClasse;
+	}
+
+	public void setIdClasse(int idClasse) {
+		this.idClasse = idClasse;
+	}
+	
+	
+	
 
 
 

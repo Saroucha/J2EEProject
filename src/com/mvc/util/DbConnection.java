@@ -8,20 +8,21 @@ public class DbConnection {
 	 {
 	 Connection con = null;
 	 String url = "jdbc:mysql://localhost:3306/gestionsalle"; 
-	 String username = "root"; //MySQL username
-	 String password = ""; //MySQL password
+	 String username = "root"; 
+	 String password = ""; 
 	 
 	 try 
 	 {
 	 try 
 	 {
-	 Class.forName("org.mariadb.jdbc.Driver"); //loading mysql driver 
+	 Class.forName("org.mariadb.jdbc.Driver");  
+	 
 	 } 
 	 catch (ClassNotFoundException e)
 	 {
 	 e.printStackTrace();
 	 } 
-	 con = DriverManager.getConnection(url, username, password); //attempting to connect to MySQL database
+	 con = DriverManager.getConnection(url, username, password); 
 	 System.out.println("Printing connection object "+con);
 	 } 
 	 catch (Exception e) 

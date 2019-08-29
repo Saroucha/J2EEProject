@@ -31,19 +31,19 @@
                     <th>Delete</th>
                 </tr>
                 <%
-                    String url="jdbc:mysql://localhost:3306/gestionsalle"; //database connection url string
-                    String username="root"; //database connection username
-                    String password=""; //database password
+                    String url="jdbc:mysql://localhost:3306/gestionsalle"; 
+                    String username="root"; 
+                    String password=""; 
                   
                 try
                 {
-                    Class.forName("org.mariadb.jdbc.Driver"); //load driver
-                    Connection con=DriverManager.getConnection(url,username,password); //create connection
+                    Class.forName("org.mariadb.jdbc.Driver"); 
+                    Connection con=DriverManager.getConnection(url,username,password); 
                   
-                    PreparedStatement pstmt=null; //create statement
+                    PreparedStatement pstmt=null;
                   
-                    pstmt=con.prepareStatement("select * from utilisateur"); //sql select query
-                    ResultSet rs=pstmt.executeQuery(); //execute query and set in ResultSet object rs.
+                    pstmt=con.prepareStatement("select * from utilisateur"); 
+                    ResultSet rs=pstmt.executeQuery(); 
                     
                     while(rs.next())
                     {
@@ -63,9 +63,9 @@
                 <%
                     }
                     
-                    pstmt.close(); //close statement
+                    pstmt.close(); 
 
-                    con.close(); //close connection
+                    con.close(); 
                 }
                 catch(Exception e)
                 {
@@ -79,15 +79,13 @@
                 <%
                     if(request.getAttribute("InsertSuccessMsg")!=null)
                     {
-                        out.println(request.getAttribute("InsertSuccessMsg")); //get record insert success message from AddController.java
-                    }
+                        out.println(request.getAttribute("InsertSuccessMsg"));     }
                 %>
                 
                 <%
                     if(request.getAttribute("UpdateSuccessMsg")!=null)
                     {
-                        out.println(request.getAttribute("UpdateSuccessMsg")); //get record update success message from EditController.java
-                    }
+                        out.println(request.getAttribute("UpdateSuccessMsg"));  }
                 %>
                 </h3>
             </center>

@@ -6,16 +6,15 @@ public class Prof {
 
 	private int idProf;
     private String NOMP; 
-    private String PRENOMP;
+   
     
     public Prof(){
     	
     }
     
-    public Prof(int id,String nom, String prenom){
+    public Prof(int id,String nom){
     	this.idProf=id;
     	this.NOMP=nom;
-    	this.PRENOMP=prenom;
     }
 
 	public int getIdProf() {
@@ -34,14 +33,7 @@ public class Prof {
 		NOMP = nOMP;
 	}
 
-	public String getPRENOMP() {
-		return PRENOMP;
-	}
-
-	public void setPRENOMP(String pRENOMP) {
-		PRENOMP = pRENOMP;
-	}
-
+	
 
 
 
